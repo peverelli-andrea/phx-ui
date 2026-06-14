@@ -1,0 +1,17 @@
+{
+    "name": "andreapeverelli/phx-ui",
+    "description": "A collection of UI/UX components for PHP",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Andreapeverelli\\PhxUi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andrea Peverelli"
+        }
+    ],
+    "require": {}
+}
