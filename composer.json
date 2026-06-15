@@ -5,7 +5,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "AndreaPeverelli\\PhxUi\\": "src/"
+            "AndreaPeverelli\\PhxUi\\": "src/",
+	    "AndreaPeverelli\\PhxCore\\": "../phx-core/src/"
         }
     },
     "authors": [
