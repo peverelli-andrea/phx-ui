@@ -13,7 +13,7 @@ final class HeadingProps
 	)
 	{
 		if ($common_props === null) {
-			$common_props = new CommonProps();
+			$this->common_props = new CommonProps();
 		}
 	}
 }

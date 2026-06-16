@@ -13,7 +13,6 @@ final class Tests
 		echo "--------------------------------\n";
 		echo "# Baseline components unit tests\n";
 		echo "--------------------------------\n";
-		echo "\n";
 
 		HeadingTests::run();
 	}

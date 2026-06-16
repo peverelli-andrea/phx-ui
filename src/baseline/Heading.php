@@ -10,17 +10,22 @@ final class Heading extends Component
 {
 	final public function __construct(?HeadingProps $props = null)
 	{
-		$this->props = $props ?? new HeadingProps();
+		if(!$props) $props = new HeadingProps();
+
+		$this->registerComponent(props: $props);
 	}
 
 	final public function render(): Render
 	{
-		$heading_level = $this->props->level->value;
-		$content = $this->props->content;
+		$heading_level = $this->props["default"]->level->value;
+		$content = $this->props["default"]->content;
+
+		$this->makeAttributes();
+		$attributes = $this->attributes["default"];
 		
 		return new Render(
 			html: <<<HTML
-			<$heading_level>$content</$heading_level>
+			<$heading_level$attributes>$content</$heading_level>
 			HTML,
 		);
 	}
