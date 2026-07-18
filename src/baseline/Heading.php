@@ -4,6 +4,7 @@ namespace AndreaPeverelli\PhxUi\baseline;
 
 use AndreaPeverelli\PhxCore\Component;
 use AndreaPeverelli\PhxCore\Render;
+use AndreaPeverelli\PhxCore\ColorMode;
 use AndreaPeverelli\PhxUi\baseline\heading\HeadingProps;
 
 final class Heading extends Component
@@ -17,8 +18,13 @@ final class Heading extends Component
 
 	final public function render(): Render
 	{
-		$heading_level = $this->props["default"]->level->value;
-		$content = $this->props["default"]->content;
+		$props = $this->props["default"];
+
+		$heading_level = $props->level->value;
+		$content = $props->content;
+
+		$this->useFont(typo: $props->typo);
+		$this->useColor(color: $props->color, mode: ColorMode::COLOR);
 
 		$this->makeAttributes();
 		$attributes = $this->attributes["default"];
@@ -27,6 +33,8 @@ final class Heading extends Component
 			html: <<<HTML
 			<$heading_level$attributes>$content</$heading_level>
 			HTML,
+			css: $this->css["default"],
+			classes: $this->classes["default"],
 		);
 	}
 }

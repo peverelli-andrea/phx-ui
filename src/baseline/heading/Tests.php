@@ -25,8 +25,52 @@ final class Tests
 
 		$expect = new Render(
 			html: <<<HTML
-			<h1 id="$id">H1 Test</h1>
+			<h1 id="$id" class="phx_proportional_not_emphasized_title_large phx_on_surface_color">H1 Test</h1>
 			HTML,
+			classes: [
+				"phx_proportional_not_emphasized_title_large",
+				"phx_on_surface_color",
+			],
+			css: [
+				<<<CSS
+				@font-face {
+					font-family: Google Sans;
+					src: url(/asssets/fonts/google-sans-medium.woff2) format(woff2),url(/assets/fonts/google-sans-medium.woff) format(woff);
+				}
+				CSS,
+				<<<CSS
+				.phx_proportional_not_emphasized_title_large {
+					font-family: Google Sans;
+					font-weight: 400;
+					line-height: 28px;
+					font-size: 22px;
+					letter-spacing: 0;
+				}
+				CSS,
+				<<<CSS
+				.phx_on_surface_color {
+					color: #1D1B20;
+				}
+
+				@media (prefers-contrast: more) {
+					.phx_on_surface_color {
+						color: #000000;
+					}
+				}
+
+				@media (prefers-color-scheme: dark) {
+					.phx_on_surface_color {
+						color: #E6E0E9;
+					}
+				}
+
+				@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+					.phx_on_surface_color {
+						color: #FFFFFF;
+					}
+				}
+				CSS,
+			],
 		);
 
 		TestSuite::test(got: $got, expect: $expect);
