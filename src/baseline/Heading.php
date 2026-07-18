@@ -18,20 +18,14 @@ final class Heading extends Component
 
 	final public function render(): Render
 	{
-		$props = $this->props["default"];
-
-		$heading_level = $props->level->value;
-		$content = $props->content;
+		$props = $this->getProps();
 
 		$this->useFont(typo: $props->typo);
 		$this->useColor(color: $props->color, mode: ColorMode::COLOR);
-
-		$this->makeAttributes();
-		$attributes = $this->attributes["default"];
 		
 		return $this->build(
 			html: <<<HTML
-			<$heading_level$attributes>$content</$heading_level>
+			<@level()@attributes()>@content()</@level()>
 			HTML,
 		);
 	}
