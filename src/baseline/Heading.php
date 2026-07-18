@@ -29,12 +29,10 @@ final class Heading extends Component
 		$this->makeAttributes();
 		$attributes = $this->attributes["default"];
 		
-		return new Render(
+		return $this->build(
 			html: <<<HTML
 			<$heading_level$attributes>$content</$heading_level>
 			HTML,
-			css: $this->css["default"],
-			classes: $this->classes["default"],
 		);
 	}
 }
