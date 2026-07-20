@@ -17,11 +17,13 @@ final class Tests
 
 		$id = uniqid();
 
-		$got = (new Heading(new HeadingProps(
+		$heading = new Heading();
+		$heading->registerProps(new HeadingProps(
 			common_props: new CommonProps(id: $id),
 			level: HeadingLevel::H1,
 			content: "H1 Test",
-		)))->render();
+		));
+		$got = $heading->render();
 
 		$expect = new Render(
 			html: <<<HTML

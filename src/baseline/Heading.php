@@ -9,13 +9,6 @@ use AndreaPeverelli\PhxUi\baseline\heading\HeadingProps;
 
 final class Heading extends Component
 {
-	final public function __construct(?HeadingProps $props = null)
-	{
-		if(!$props) $props = new HeadingProps();
-
-		$this->registerComponent(props: $props);
-	}
-
 	final public function render(): Render
 	{
 		$props = $this->getProps();
