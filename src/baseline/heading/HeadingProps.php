@@ -3,10 +3,10 @@
 namespace AndreaPeverelli\PhxUi\baseline\heading;
 
 use AndreaPeverelli\PhxCore\CommonProps;
-use AndreaPeverelli\PhxCore\palette\ColorScheme;
+use AndreaPeverelli\PhxCore\ColorScheme;
 use AndreaPeverelli\PhxCore\Typo;
-use AndreaPeverelli\PhxCore\typo\TypoRole;
-use AndreaPeverelli\PhxCore\typo\TypoSubRole;
+use AndreaPeverelli\PhxCore\TypoRole;
+use AndreaPeverelli\PhxCore\TypoSubRole;
 
 final class HeadingProps
 {
