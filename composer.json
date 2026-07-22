@@ -5,7 +5,10 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "AndreaPeverelli\\PhxUi\\": "src/"
+            "AndreaPeverelli\\PhxUi\\": "src/",
+            "AndreaPeverelli\\PhxUi\\Baseline\\": [
+		    "src/baseline/heading"
+	    ]
         }
     },
     "authors": [

@@ -2,7 +2,7 @@
 
 namespace AndreaPeverelli\PhxUi\baseline\heading;
 
-use AndreaPeverelli\PhxUi\baseline\Heading;
+use AndreaPeverelli\PhxUi\Baseline\Heading;
 use AndreaPeverelli\PhxCore\Render;
 use AndreaPeverelli\PhxCore\CommonProps;
 use AndreaPeverelli\PhxCore\TestSuite;
